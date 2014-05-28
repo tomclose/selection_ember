@@ -5,5 +5,5 @@ export default DS.Model.extend({
 
   priceCents: function() {
     return this.get('quantity') * this.get('dish.priceCents');
-  }.property('quantity, dish.priceCents'),
+  }.property('quantity', 'dish.priceCents'),
 });
