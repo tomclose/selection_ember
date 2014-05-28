@@ -1,16 +1,25 @@
 <h1>{{customer}}</h1>
 
-{{input value=customer}}
 
-<table>
+<table class='table'>
+<thead>
+  <tr>
+    <th>Dish</th>
+    <th>Quantity</th>
+  </tr>
+</thead>
 <tbody>
 {{#each items}}
   <tr>
     <td>{{dish.name}}</td>
-    <td>{{quantity}}</td>
+    <td>{{input value=quantity classNames='form-control'}}</td>
+    <td>{{price}}</td>
   </tr>
 {{/each}}
 </tbody>
 </table>
 
-{{view Em.Select content=dishes value=currentDish.id optionValuePath="content.id" optionLabelPath="content.name"}}
+<div class='form-inline'>
+{{view Em.Select content=dishes selection=newDish optionValuePath="content.id" optionLabelPath="content.name" classNames='form-control'}}
+<button {{action 'addDish'}} class='btn btn-success'>Add dish</button>
+</div>
