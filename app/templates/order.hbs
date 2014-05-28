@@ -1,0 +1,16 @@
+<h1>{{customer}}</h1>
+
+{{input value=customer}}
+
+<table>
+<tbody>
+{{#each items}}
+  <tr>
+    <td>{{dish.name}}</td>
+    <td>{{quantity}}</td>
+  </tr>
+{{/each}}
+</tbody>
+</table>
+
+{{view Em.Select content=dishes value=currentDish.id optionValuePath="content.id" optionLabelPath="content.name"}}
